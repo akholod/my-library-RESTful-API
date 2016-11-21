@@ -1,0 +1,17 @@
+{
+  "name": "restful-api-my-library",
+  "main": "server.js",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": ""
+  },
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "express": "~4.14.0",
+    "google-books-search": "^0.3.0",
+    "jade": "~1.11.0",
+    "mongoose": "~3.8.1",
+    "morgan": "~1.7.0"
+  }
+}

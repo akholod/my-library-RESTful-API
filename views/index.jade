@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  .container
+    .panel.panel-primary
+      .panel-heading
+        h1.text-center.text-center My Library RESTful api
+      .panel-body.text-center
+        h3 Our API features:
+        ul
+          li
+            | Handle CRUD for an books in library
+          li
+            | Use the proper HTTP verbs to make it RESTful (GET, POST, PUT, and DELETE)
+          li
+            | Return JSON data
+        p Example usage:
+        p Get all my books in library with GET
+        code https://mstimestamp.herokuapp.com/api/books
+        code  { "": , "": "" }
+        p Add new book in library with POST
+        code https://mstimestamp.herokuapp.com/api/
+        p Example output:
+        code  { "": , "": "" }
+        p Get single book in library with GET
+        code https://mstimestamp.herokuapp.com/api/:book_id
+        p Example output:
+        code  { "": , "": "" }
+        p Update book info PUT
+        code https://mstimestamp.herokuapp.com/api/:book_id
+        p Example output:
+        code  { "": , "": "" }
+        p Delete a book with DELETE
+        code https://mstimestamp.herokuapp.com/api/:book_id
+        p Example output:
+        code  { "": , "": "" }
+
