@@ -4,7 +4,9 @@ const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8080;
+
+require('./db');
 
 //import routes
 let index = require('./routes/index');

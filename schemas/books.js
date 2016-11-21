@@ -4,7 +4,6 @@
 'use strict';
 var mongoose = require('mongoose');
 
-
 // define the schema for our user model
 var bookSchema = mongoose.Schema({
     title: { type: String, required: true, unique: true},
