@@ -14,6 +14,9 @@ router.route('/books/:book_title')
                 res.status(500).send("Database error");
                 return new Error(err);
             }
+            if(!book) {
+                res.json({ message: 'Book not found' });
+            }
             res.json(book);
         });
     })
