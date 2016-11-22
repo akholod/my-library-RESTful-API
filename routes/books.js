@@ -7,7 +7,7 @@ const router = express.Router();
 const booksGoogle = require('google-books-search');
 const BooksModel = new require('../schemas/books');
 router.route('/books')
-    .post((req, res) => {
+    .post(function(req, res)  {
         let bookSearchOptions = {
             limit: 1,
             type: 'books'
@@ -33,32 +33,34 @@ router.route('/books')
                 return console.log(error);
             }
             results = results[0];
-            BooksModel.findOne({'title': results.title}, (err, book) => {
+            BooksModel.findOne({'title': results.title}, (err, books) => {
                 if (err) {
                     res.status(500).send("Database error");
                     return new Error(err)
                 }
-                if (book) {
+                if (books) {
                     return res.json({"error": "Book already added"});
                 }
-            });
 
-            let book = new BooksModel();
-            book.title = results.title;
-            book.language = results.language;
-            book.image = results.thumbnail;
-            book.authors = results.authors;
-            book.pageCount = results.pageCount;
-            book.save(function(err) {
-                if (err) {
-                    res.status(500).send("Database error");
-                    return new Error(err);
-                }
-                return console.log('Book added');
+                let book = new BooksModel();
+                book.title = results.title;
+                book.language = results.language;
+                book.image = results.thumbnail;
+                book.authors = results.authors;
+                book.pageCount = results.pageCount;
+                book.save(function(err) {
+                    if (err) {
+                        res.status(500).send("Database error");
+                        return new Error(err);
+                    }
+                    res.json({ message: 'Book added'});
+                    return console.log('Book added');
+                });
+
             });
 
         });
-    }).get((req,res) => {
+    }).get(function(req,res)  {
         BooksModel.find(function(err, books) {
             if (err) {
                 res.status(500).send("Database error");

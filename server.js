@@ -11,6 +11,7 @@ require('./db');
 //import routes
 let index = require('./routes/index');
 let books = require('./routes/books');
+let booksTitle = require('./routes/books_title');
 
 //init express app
 let app = express();
@@ -25,6 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', index);
 app.use('/api', books);
+app.use('/api', booksTitle);
 
 //listen port
 app.listen(port, function() {
