@@ -15,7 +15,7 @@ router.route('/books/:book_title')
                 return new Error(err);
             }
             if(!book) {
-                res.json({ message: 'Book not found' });
+                return res.json({ message: 'Book not found' });
             }
             res.json(book);
         });

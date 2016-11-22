@@ -4,7 +4,7 @@ block content
   .container
     .panel.panel-primary
       .panel-heading
-        h1.text-center.text-center My Library RESTful API
+        h2.text-center My Library RESTful API
       .panel-body.text-center
         h3 Our API features:
         ul
@@ -14,24 +14,20 @@ block content
             | Use the proper HTTP verbs to make it RESTful (GET, POST, PUT, and DELETE)
           li
             | Return JSON data
-        p Example usage:
-        p Get all my books in library with GET
-        code https://mstimestamp.herokuapp.com/api/books
-        code  { "": , "": "" }
-        p Add new book in library with POST
-        code https://mstimestamp.herokuapp.com/api/
-        p Example output:
-        code  { "": , "": "" }
-        p Get single book in library with GET
-        code https://mstimestamp.herokuapp.com/api/:book_id
-        p Example output:
-        code  { "": , "": "" }
-        p Update book info PUT
-        code https://mstimestamp.herokuapp.com/api/:book_id
-        p Example output:
-        code  { "": , "": "" }
-        p Delete a book with DELETE
-        code https://mstimestamp.herokuapp.com/api/:book_id
-        p Example output:
-        code  { "": , "": "" }
-
+        h3 Example usage:
+        .well
+          p Get all my books in library with GET
+          code https://my-library-api.herokuapp.com/api/books
+        .well
+          p Add new book in library with POST
+          code https://my-library-api.herokuapp.com/api/books
+          p Request body must have a JSON {"bookTitle" : "Book name"} or {"bookTitle" : "Book name",  "bookLang": "ru"} if title is not English
+        .well
+          p Get single book in library with GET
+          code https://my-library-api.herokuapp.com/api/books/:book_title
+        .well
+          p Update book info PUT
+          code https://my-library-api.herokuapp.com/api/books/:book_title
+        .well
+          p Delete a book with DELETE
+          code https://my-library-api.herokuapp.com/api/books/:book_title
