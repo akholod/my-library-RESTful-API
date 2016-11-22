@@ -10,6 +10,7 @@ require('./db');
 
 //import routes
 let index = require('./routes/index');
+let books = require('./routes/books');
 
 //init express app
 let app = express();
@@ -23,6 +24,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', index);
+app.use('/api', books);
 
 //listen port
 app.listen(port, function() {
