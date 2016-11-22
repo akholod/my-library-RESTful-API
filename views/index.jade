@@ -16,18 +16,18 @@ block content
             | Return JSON data
         h3 Example usage:
         .well
-          p Get all my books in library with GET
+          p Get all my books in library with GET. Returns an array of JSON objects
           code https://my-library-api.herokuapp.com/api/books
         .well
-          p Add new book in library with POST
+          p Add new book in library with POST. Returns single JSON object with message (success or error)
           code https://my-library-api.herokuapp.com/api/books
           p Request body must have a JSON {"bookTitle" : "Book name"} or {"bookTitle" : "Book name",  "bookLang": "ru"} if title is not English
         .well
-          p Get single book in library with GET
+          p Get single book in library with GET. Returns single JSON object
           code https://my-library-api.herokuapp.com/api/books/:book_title
         .well
-          p Update book info PUT
+          p Update book info PUT. Returns single JSON object with message (success or error)
           code https://my-library-api.herokuapp.com/api/books/:book_title
         .well
-          p Delete a book with DELETE
+          p Delete a book with DELETE. Returns single JSON object with message (success or error)
           code https://my-library-api.herokuapp.com/api/books/:book_title

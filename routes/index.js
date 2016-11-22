@@ -12,6 +12,7 @@ router.use(function(req, res, next) {
   next();
 });
 
+//get entry page
 router.get('/', function(req, res) {
   res.render('index', { title: 'Books API' });
 });
